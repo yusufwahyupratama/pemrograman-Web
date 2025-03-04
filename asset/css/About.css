@@ -1,0 +1,65 @@
+/* Gaya untuk halaman About */
+.about {
+    margin-top:150px;
+    padding: 80px 40px;
+    background-color: rgba(255, 255, 255, 0.007); /* Warna latar belakang dengan transparansi */
+    backdrop-filter: blur(10px); /* Efek blur untuk latar belakang */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .about-image {
+    flex: 1 1 300px;
+    text-align: center;
+  }
+  
+  .about-image img {
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .about-content {
+    flex: 2 1 400px;
+  }
+  
+  .about-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  /* Responsive: Untuk layar kecil */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .about-image img {
+      max-width: 80%;
+    }
+    
+    .about-content {
+      margin-top: 20px;
+    }
+    
+    .about-content p {
+      text-align: left;
+    }
+  }
+  

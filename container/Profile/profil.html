@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="img/Gambar.jpg"/>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="../../asset/css/profil.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+        <link rel="stylesheet" href="../../asset/css/styles.css" />
+        <title>Profil</title>
+    </head>
+    <body>
+        <!-- Navbar -->
+    <nav class="navbar">
+    <div class="brand-title">MyWebsite</div>
+        
+    <div class="navbar-links">
+        <ul>
+          <li><a href="../../asset/Home.html">Home</a></li>
+            <li><a href="../../container/About/About.html">About</a></li>
+            <li><a href="../../container/Playanan/Services.html">Services</a></li>
+            <li class="active"><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="navbar-controls">
+      <button class="toggle-button" aria-label="Toggle Menu" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <!-- tombol dark mode switch custom -->
+    <label class="switch">
+      <input class="switch__input" type="checkbox" role="switch" id="darkModeToggle">
+      <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+          <circle cx="6" cy="6" r="2" />
+          <g stroke-dasharray="1.5 1.5">
+            <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+            <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+            <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+            <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+            <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+            <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+            <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+            <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+          </g>
+        </g>
+      </svg>
+      <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+          <path d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"/>
+        </g>	
+      </svg>
+      <span class="switch__sr">Dark Mode</span>
+    </label>
+  </nav>
+</div>
+  
+        </nav>
+    
+        <!-- Konten Utama -->
+        <main>
+          <div class="card">
+            <div class="imgBx">
+              <img src="../../asset/img/Gambar.jpg" alt="Profile Picture" />
+            </div>
+            <div class="content">
+              <div class="details">
+                <h2>
+                  Yusuf Wahyu <br />
+                  <span>Mahasiswa S1 Teknik Informatika</span>
+                </h2>
+                <div class="data">
+                  <h3>0<br /><span>Posts</span></h3>
+                  <h3>184<br /><span>Following</span></h3>
+                  <h3>6<br /><span>Followers</span></h3>
+                </div>
+                <div class="actionBtn">
+                  <a href="https://github.com/yusufwahyupratama" target="_blank">Follow</a>
+                  <a href="https://wa.me/6283892247644" target="_blank">Message</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      
+</body>
+<script src="../../asset/js/script.js"></script>
+</html>
