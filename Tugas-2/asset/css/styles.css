@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+/* --- Reset & Variabel Global --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit; /* Warna link akan mengikuti warna dari elemen induk */
+  text-decoration: none; /* Opsional: menghilangkan garis bawah */
+}
+
+:root {
+  --hue: 223;
+  --bg-light: linear-gradient(45deg, #fbda61, #ff5acd);
+  --bg-dark: #121212;
+  --trans-dur: 0.3s;
+  --trans-timing: cubic-bezier(0.76, 0.05, 0.24, 0.95);
+  --trans-timing-in: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+  --trans-timing-out: cubic-bezier(0.05, 0.76, 0.06, 0.86);
+}
+
+/* --- Style Global --- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-light);
+  min-height: 100vh;
+  transition: background var(--trans-dur), color var(--trans-dur);
+}
+
+/* Dark Mode untuk seluruh halaman via :has() */
+body:has(.switch__input:checked) {
+  background: var(--bg-dark);
+  color: #e0e0e0;
+}
+
+/* --- Navbar --- */
+nav.navbar {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, #fbda61, #ff5acd);
+  padding: 10px 20px;
+}
+
+.brand-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  padding: 10px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  transition: background var(--trans-dur), color var(--trans-dur);
+}
+
+/* Style untuk container baru (navbar-controls) */
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Memberi jarak antar elemen di dalamnya */
+}
+
+.navbar-links a:hover {
+  background: var(--bg-light);
+  border-radius: 5px;
+}
+/* Dark Mode aktif via kelas .dark-mode */
+body.dark-mode {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+/* Ubah style navbar di dark mode */
+body:has(.switch__input:checked) nav.navbar {
+  background: var(--bg-dark);
+}
+
+body:has(.switch__input:checked) .navbar-links a {
+  color: #e0e0e0;
+}
+
+body:has(.switch__input:checked) .navbar-links a:hover {
+  background: #333;
+}
+.navbar-links li.active a {
+  background-color: #ff5acd;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Tombol toggle untuk mobile */
+.toggle-button {
+  display: none;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.home{
+  margin-top: 65px;
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.007); /* Warna latar belakang dengan transparansi */
+  backdrop-filter: blur(10px); /* Efek blur untuk latar belakang */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.home-content {
+  flex: 1;
+}
+
+.home-content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.home-content p {
+  font-size: 1.0rem;
+  line-height: 1.6;
+}
+
+.home-image {
+  flex: 1;
+  text-align: right;
+}
+
+.home-image img {
+  width: 350px;         /* Sesuaikan ukuran sesuai kebutuhan */
+  height: 350px;        /* Pastikan tinggi dan lebar sama agar bentuknya lingkaran */
+  border-radius: 50%;   /* Membuat gambar berbentuk lingkaran */
+  object-fit: cover;    /* Menjaga proporsi gambar jika ukurannya berbeda */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Menambahkan efek shadow */
+}
+/*
+    Auther: Abdelrhman Said
+*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #CD201F;
+  color: #ffffff;
+}
+
+
+/* Responsif: Tampilan untuk layar kecil */
+/* Responsif: Tampilan untuk layar kecil */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .home-image {
+    order: -1; /* Memindahkan gambar ke posisi paling atas */
+    text-align: center;
+    margin-bottom: 20px; /* Ubah margin sesuai kebutuhan */
+  }
+  .home-content {
+    order: 1;
+  }
+}
+
+
+/* Responsif: menu tersembunyi dan tampilkan tombol toggle */
+@media (max-width: 768px) {
+  .toggle-button {
+    display: block;
+  }
+  .navbar-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    background: var(--bg-light);
+    text-align: center;
+  }
+  .navbar-links ul {
+    flex-direction: column;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+  /* Ubah background navbar di mobile dark mode */
+  body:has(.switch__input:checked) .navbar-links {
+    background: var(--bg-dark);
+  }
+}
+
+/* --- Main Konten --- */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* --- Dark Mode Switch Custom --- */
+.switch {
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+.switch__input,
+.switch__icon {
+  display: block;
+}
+
+.switch__input {
+  background-color: hsl(210, 90%, 70%);
+  border-radius: 0.75em;
+  box-shadow: 0 0 0 0.125em hsla(var(--hue), 90%, 50%, 0),
+    0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
+  outline: transparent;
+  width: 3em;
+  height: 1.5em;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color var(--trans-dur) var(--trans-timing),
+    box-shadow 0.15s linear;
+}
+
+.switch__input:focus-visible {
+  box-shadow: 0 0 0 0.125em hsl(var(--hue), 90%, 50%),
+    0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
+}
+
+.switch__input:before,
+.switch__input:after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.switch__input:before {
+  background-color: hsl(50, 90%, 50%);
+  border-radius: inherit;
+  mask-image: linear-gradient(120deg, hsl(0, 0%, 0%) 20%, hsla(0, 0%, 0%, 0) 80%);
+  -webkit-mask-image: linear-gradient(120deg, hsl(0, 0%, 0%) 20%, hsla(0, 0%, 0%, 0) 80%);
+  inset: 0;
+  transition: background-color var(--trans-dur) var(--trans-timing);
+}
+
+.switch__input:after {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  box-shadow: 0.05em 0.05em 0.05em hsla(var(--hue), 90%, 10%, 0.1);
+  top: 0.125em;
+  left: 0.125em;
+  width: 1.25em;
+  height: 1.25em;
+  transition: background-color var(--trans-dur) var(--trans-timing),
+    transform var(--trans-dur) var(--trans-timing);
+  z-index: 1;
+}
+
+.switch__input:checked {
+  background-color: hsl(290, 90%, 40%);
+}
+
+.switch__input:checked:before {
+  background-color: hsl(220, 90%, 40%);
+}
+
+.switch__input:checked:after {
+  background-color: hsl(0, 0%, 0%);
+  transform: translateX(1.5em);
+}
+
+.switch__icon {
+  position: absolute;
+  top: 0.275em;
+  right: 0.150em;
+  width: 0.75em;
+  height: 0.75em;
+  transition: opacity calc(var(--trans-dur) / 2),
+    transform calc(var(--trans-dur) / 2);
+}
+
+.switch__icon--light,
+.switch__icon--light polyline {
+  transition-delay: calc(var(--trans-dur) / 2);
+  transition-timing-function: var(--trans-timing-out);
+}
+
+.switch__icon--dark {
+  opacity: 0;
+  transform: translateX(-0.75em) rotate(30deg) scale(0.75);
+  transition-timing-function: var(--trans-timing-in);
+}
+
+.switch__input:checked ~ .switch__icon--light,
+.switch__input:checked ~ .switch__icon--light polyline {
+  transition-delay: 0s;
+  transition-timing-function: var(--trans-timing-in);
+}
+
+.switch__input:checked ~ .switch__icon--light {
+  opacity: 0;
+  transform: translateX(-0.75em) rotate(-30deg) scale(0.75);
+}
+
+.switch__input:checked ~ .switch__icon--light polyline {
+  stroke-dashoffset: 1.5;
+}
+
+.switch__input:checked ~ .switch__icon--dark {
+  opacity: 1;
+  transform: translateX(-1.5em);
+  transition-delay: calc(var(--trans-dur) / 2);
+  transition-timing-function: var(--trans-timing-out);
+}
+
+.switch__sr {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
