@@ -1,3 +1,31 @@
+document.addEventListener("DOMContentLoaded", function(){
+  // Ambil semua section yang memiliki atribut id (sesuai dengan anchor di navbar)
+  const sections = document.querySelectorAll('main[id]');
+  // Ambil semua link pada navbar
+  const navLinks = document.querySelectorAll('.navbar-links ul li a');
+  
+  window.addEventListener('scroll', () => {
+    let currentSection = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      // Jika posisi scroll sudah melewati 1/3 section, maka set section tersebut sebagai aktif
+      if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+    
+    // Update class active pada masing-masing link navbar
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === '#' + currentSection) {
+        link.classList.add('active');
+      }
+    });
+  });
+});
+
 window.addEventListener("load", function() {
     // Cek tipe navigasi menggunakan API Performance
     let navEntries = window.performance.getEntriesByType("navigation");
@@ -12,12 +40,6 @@ window.addEventListener("load", function() {
   // Mengatur posisi scroll ke atas saat halaman akan dimuat ulang
     window.onbeforeunload = function() {
     window.scrollTo(0, 0);
-  };
-  // Menghapus hash dari URL saat halaman dimuat
-  window.onload = function() {
-    if (window.location.hash) {
-      window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
-    }
   };
   
   document.addEventListener('DOMContentLoaded', function () {
@@ -43,7 +65,14 @@ window.addEventListener("load", function() {
         navLinks.classList.remove('active');
       }
     });
-  
+    
+    const navItems = document.querySelectorAll('.navbar-links a');
+    navItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+    
     // Dark Mode: Periksa status dari localStorage
     if (localStorage.getItem('darkMode') === 'active') {
       darkModeToggle.checked = true;
@@ -80,3 +109,4 @@ window.addEventListener("load", function() {
         document.body.classList.remove("modal-open");
     });
   });
+  

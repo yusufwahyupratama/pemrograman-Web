@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="scroll-behavior: smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +13,10 @@
         <div class="brand-title">MyWebsite</div>
         <div class="navbar-links">
             <ul>
-                <li class="active"><a href="#home">Home</a></li>
-                <li><a href="../container/About/About.html">About</a></li>
-                <li><a href="../container/Playanan/Services.html">Services</a></li>
-                <li><a href="../container/Profile/profil.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact</a></li>
             </ul>
         </div>
         <div class="navbar-controls">
@@ -50,8 +50,8 @@
       </label>
     </nav>
 
-    <main class="home">
-      <div class="home-container">
+    <main class="home" id="home">
+      <div class="home-container" >
         <!-- Konten Ucapan Selamat Datang -->
         <div class="home-content">
           <h1>Selamat Datang di MyWebsite</h1>
@@ -89,7 +89,32 @@
         </div>
       </div>
     </main>
-    
+
+      <main class="about-me" id="about">
+        <section class="about">
+          <div class="about-container">
+            <!-- Gambar tentang Kentang Kita -->
+            <div class="about-image">
+              <img src="../asset/img/About.png" alt="Gambar Kentang Kita">
+            </div>
+            <!-- Konten Cerita -->
+            <div class="about-content">
+              <h1>Tentang Kentang Kita</h1>
+              <p>
+                Kisah Kentang Kita dimulai dari kecintaan terhadap alam dan cita rasa hasil bumi yang autentik. Kami percaya bahwa setiap butir kentang memiliki cerita, dari penanaman dengan penuh cinta hingga perjalanan menuju meja makan Anda.
+              </p>
+              <p>
+                Dengan komitmen untuk menyediakan produk berkualitas tinggi, kentang kami ditanam secara organik dan berkelanjutan. Kami menerapkan teknik pertanian tradisional yang dipadukan dengan inovasi modern untuk menghasilkan kentang yang sehat dan lezat.
+              </p>
+              <p>
+                Kentang Kita bukan hanya tentang produk, melainkan juga tentang nilai kebersamaan, kerja keras, dan dukungan terhadap komunitas lokal. Kami berharap setiap gigitan kentang kami dapat menceritakan kisah keaslian dan dedikasi dalam setiap panennya.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

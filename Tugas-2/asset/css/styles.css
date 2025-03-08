@@ -110,7 +110,7 @@ body:has(.switch__input:checked) .navbar-links a {
 body:has(.switch__input:checked) .navbar-links a:hover {
   background: #333;
 }
-.navbar-links li.active a {
+.navbar-links ul li a.active{
   background-color: #ff5acd;
   color: #fff;
   border-radius: 5px;
@@ -127,7 +127,6 @@ body:has(.switch__input:checked) .navbar-links a:hover {
 }
 
 .home{
-  margin-top: 65px;
   padding: 40px 20px;
   background-color: rgba(255, 255, 255, 0.007); /* Warna latar belakang dengan transparansi */
   backdrop-filter: blur(10px); /* Efek blur untuk latar belakang */
@@ -135,12 +134,12 @@ body:has(.switch__input:checked) .navbar-links a:hover {
 }
 
 .home-container {
+  height: 100vh; /* Tinggi penuh */
   max-width: 1200px;
-  margin: 0 auto;
+  margin-bottom: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
 }
 
 .home-content {
@@ -172,13 +171,6 @@ body:has(.switch__input:checked) .navbar-links a:hover {
 /*
     Auther: Abdelrhman Said
 */
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 *:focus,
 *:active {
@@ -281,11 +273,85 @@ body:has(.switch__input:checked) .navbar-links a:hover {
   color: #ffffff;
 }
 
+.about-me {
+  height: 100vh;       /* Tinggi penuh viewport */
+  display: flex;       /* Memungkinkan alignment di tengah */
+  align-items: center; /* Vertikal center */
+  justify-content: center; /* Horizontal center */
+  padding: 10% 10px;  /* Jarak atas/bawah & samping */
+  box-sizing: border-box; /* Pastikan padding terhitung di dalam height 100vh */
+}
+
+
+/* Gaya untuk halaman About */
+.about {
+  padding: 80px 40px;
+  background-color: rgba(255, 255, 255, 0.007); /* Warna latar belakang dengan transparansi */
+  backdrop-filter: blur(10px); /* Efek blur untuk latar belakang */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-content {
+  flex: 2 1 400px;
+}
+
+.about-content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Responsive: Untuk layar kecil */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .about-image img {
+    max-width: 80%;
+  }
+  
+  .about-content {
+    margin-top: 20px;
+  }
+  
+  .about-content p {
+    text-align: left;
+  }
+}
 
 /* Responsif: Tampilan untuk layar kecil */
 /* Responsif: Tampilan untuk layar kecil */
 @media (max-width: 768px) {
   .home-container {
+    margin-bottom: 10%;
+    margin-top: 10%;
     flex-direction: column;
     text-align: center;
   }
